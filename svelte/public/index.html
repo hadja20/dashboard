@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>Dashboard</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+	<link rel='icon' type='image/png' href='/favicon.png'>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel='stylesheet' href='global.css'>
+  <link rel='stylesheet' href='home.css'>
+	<link rel='stylesheet' href='/build/bundle.css'>
+	<link rel='stylesheet' href='home.css'>
+
+
+	<script defer src='/build/bundle.js'></script>
+</head>
+<body >
+
+	<div class="d-flex">
+	<nav class="sidebar close">
+	  <header>
+		<div class="image-text">
+		  <span class="image">
+			<img src="favicon.png" />
+		  </span>
+		  <div class="text header-text">
+			<span class="name" style="margin-top: 10px">QPC Dashboard</span>
+		  </div>
+		</div>
+  
+		<i class='bx bx-chevron-right toggle'></i>
+	  </header>
+  
+	  <div class="menu-bar">
+		<div class="menu">
+		 
+		  <ul class="menu-links">
+			<li class="nav-link">
+			  <a href="/">
+				<i class='bx bx-home-alt icon' ></i>
+				<span class="text nav-text">Dashboard</span>
+			  </a>
+			</li>
+			<li class="nav-link">
+			  <a href="/quote">
+				<i class='bx bx-message icon' ></i>
+				<span class="text nav-text">Phrase du jour</span>
+			  </a>
+			</li>
+			<li class="nav-link">
+			  <a href="/twitter">
+				<i class='bx bxl-twitter icon' ></i>
+				<span class="text nav-text">Twitter</span>
+			  </a>
+			</li>
+			<li class="nav-link">
+			  <a href="/weather">
+				<i class='bx bx-sun icon' ></i>
+				<span class="text nav-text">Méteo</span>
+			  </a>
+			</li>
+		  </ul>
+		  <div class="bottom-content">
+			<li class="">
+			  <a href="/clock">
+				<i class='bx bxs-hourglass-top icon' ></i>
+				<span class="text nav-text">Heure</span>
+			  </a>
+			</li>
+		  </div>
+		</div>
+  
+		<li class="mode">
+		  <div class="moon-sun">
+			<i class='bx bx-moon icon moon' ></i>
+			<i class='bx bx-sun icon sun' ></i>
+		  </div>
+		  <span class="mode-text text">Dark mode</span>
+		  <div class="toggle-switch">
+			<span class="switch"></span>
+		  </div>
+		</li>
+  
+	  </div>
+	</nav>
+  
+	<section class="home">
+	  <div class="navbar navbar-expand-sm navbar-light navbar-project">
+		<div class="container-fluid" style="margin: 11px; margin-left: 32px;">
+		  <a class="navbar-brand" href="#">
+		  </div>
+		  </a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="position: absolute; margin-left: 80%;">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+  
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="/">Home</a>
+				</li>
+				<li class="nav-item active">
+				  <a class="nav-link" href="/login">Login</a>
+				</li>
+				<li class="dropdown nav-item">
+				  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Messages</a>
+					<a class="dropdown-item" href="#">Paramètre</a>
+					<a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+				  </div>
+				</li>
+			</ul>
+		  </div>
+		</div>
+	</section>
+	</div>
+  
+  
+	<script>
+	  const body = document.querySelector("body");
+			sidebar = body.querySelector(".sidebar");
+			toggle = body.querySelector(".toggle");
+			searchBtn = body.querySelector(".search-box");
+			modeText = body.querySelector(".mode-text");
+			modeSwitch = body.querySelector(".toggle-switch");
+  
+			modeSwitch.addEventListener("click", () => {
+			  body.classList.toggle("dark");
+			  if(body.classList.contains("dark")){
+				modeText.innerText = "Dark Mode"
+			  }else{
+				modeText.innerText = "Dark Mode"
+			  }
+			});
+  
+			toggle.addEventListener("click", () => {
+			  sidebar.classList.toggle("close");
+			})
+	</script>
+  
+  
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+  
+  
+	</body>
+</html>
+
+
+</html>
